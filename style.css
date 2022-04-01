@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2? family= Source+Code+Pro & display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+3D&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --black: #181818;
+}
+.dark
+{
+    --black: #fff;
+}
+body
+{
+    background-color: var(--black);
+}
+.light i
+{
+    position: absolute;
+    left: 47%;
+    transform: rotate(180deg);
+    font-size: 8em;
+    color: #808080;
+    top: 70px;
+}
+.string
+{
+    position: absolute;
+    width: 5px;
+    height: 80px;
+    background: #808080;
+    left: 49.5%;
+}
+.dark .string
+{
+    top: 0;
+}
+.light span
+{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #ff0;
+    box-shadow: 0 0 15px #ff0, 0 0 20px #ff0, 0 0 40px #ff0, 0 0 60px #ff0;
+    border-radius: 50%;
+    z-index: 20;
+    left: 48%;
+    top: 137px;
+    opacity: 0;
+    z-index: -1;
+}
+span.an
+{
+    opacity: 1;
+}
+.switcher
+{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0 0 20px black;
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    left: 50px;
+    border-radius: 3px;
+}
+.lever
+{
+    position: absolute;
+    top: -20px;
+    width: 40px;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 -5px 5px black;
+    cursor: pointer;
+}
+.on
+{
+    top: 40px;
+    box-shadow: 0 5px 5px black;
+}
+/* glückwunsch */
+.wunsch
+{
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    width: 1000px;
+    height: 600px;
+    left: 470px;
+    top: 300px;
+    background-color: transparent;
+    text-transform: uppercase;
+    display: none;
+    font-family: 'Source Code Pro', monospace;
+}
+.wunsch h2
+{
+    margin-top: 150px;
+    font-size: 3em;
+}
+.wunsch h1
+{
+    font-size: 5em;
+}
+.dark .wunsch 
+{ 
+    display: block;
+    animation: happy 0.9s linear forwards;
+}
+.dark .wunsch span
+{
+    animation: bunt 0.6s linear forwards;
+    animation-delay: 1s;
+    animation-delay: calc(0.1s * var(--i));
+}
+@keyframes happy
+{
+    0%
+    {
+        transform: scale(0);
+    }
+    60%
+    {
+        transform: scale(1.2);
+    }
+    100%
+    {
+        transform: scale(1);
+    }
+}
+@keyframes bunt 
+{
+    0%
+    {
+        color: aqua;
+        filter: hue-rotate(0deg);
+    }
+    90%
+    {
+        color: aqua;
+        filter: hue-rotate(360deg);
+    }
+    100%
+    {
+        color: black;
+    }
+}
+/* baloons */
+.baloons
+{
+    position: fixed;
+    left: -30px;
+    transform: translateY(1000px);
+}
+.dark .baloons img
+{
+    width: 200px;
+    height: 200px;
+    margin: 140px;
+    animation: baloons 5s linear forwards;
+    animation-delay: calc(0.7s * var(--b));
+}
+@keyframes baloons
+{
+    0%
+    {
+        transform: translateY(600px);
+    }
+    100%
+    {
+        transform: translateY(-2000px);
+    }
+}
+.zahlen
+{
+    color: #0e0e0e;
+    font-size: 8em;
+    font-family: 'Rock 3D', cursive;
+    margin: 100px;
+    display: none;
+}
+.dark .zahlen
+{
+    display: block;
+    display: flex;
+}
+.eins
+{
+    animation: zahl1 1s linear forwards;
+}
+.sechs
+{
+    animation: zahl1 1s linear forwards;
+    animation-delay: 0.3s;
+    transform: scale(0);
+}
+@keyframes zahl1
+{
+    0%
+    {
+        transform: scale(0);
+    }
+    70%
+    {
+        transform: scale(1.3);
+    }
+    100%
+    {
+        transform: scale(1);
+    }
+}
+/* konfetti */
+.konfetti
+{
+    position: absolute;
+    top: 590px;
+    left: 710px;
+    transform: rotate(-110deg);
+    display: none;
+}
+.horn
+{
+    width: 350px;
+    height: 100px;
+    position: absolute;
+    transform: rotate(-20deg);
+    top: 700px;
+    left: 500px;
+    display: none;
+}
+.dark .konfetti
+{
+    animation: konfetti 1s linear forwards;
+    display: block;
+}
+@keyframes konfetti
+{
+    0%
+    {
+        width: 0;
+    }
+    70%
+    {
+        width: 400px;
+    }
+    100%
+    {
+        width: 300px;
+    }
+}
+.dark .horn
+{
+    animation: horn 1s linear forwards;
+    display: block;
+}
+@keyframes horn
+{
+    0%
+    {
+        width: 0;
+        height: 0;
+    }
+    70%
+    {
+        width: 400px;
+        height: 150px;
+    }
+    100%
+    {
+        width: 350px;
+        height: 100px;
+    }
+}
+.horn:hover
+{
+    animation: rotate 1s linear forwards;
+}
+@keyframes rotate
+{
+    0%,100%
+    {
+        transform: rotate(-20deg);
+    }
+    25%
+    {
+        transform: rotate(-40deg);
+    }
+    50%
+    {
+        transform: rotate(-0deg);
+    }
+}
